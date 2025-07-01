@@ -105,5 +105,4 @@ A apresentação pode ser acessada através do seguinte link: [https://youtu.be/
     SELECT * FROM votes;
     SELECT * FROM vote_control;
     ```
-
-<hr>
+    
