@@ -27,7 +27,8 @@ A apresentação pode ser acessada através do seguinte link: [https://youtu.be/
 
 2. Subir a rede Hyperledger Fabric
    ``` bash
-   cd BlockchainEleicoes/backend/test-network/
+   cd backend/
+   cd test-network/
    ./network.sh down
    ./network.sh up createChannel -c mychannel -ca -s couchdb
    ./network.sh deployCC -ccn basic -ccp ../chaincode-typescript/ -ccl typescript   
