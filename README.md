@@ -19,14 +19,23 @@ A apresentação pode ser acessada através do seguinte link: [https://youtu.be/
 
 ### Execução da Blockchain
 
-1. Clonar o repositório
+Antes de iniciar os comandos de inicialização e execução, é recomendado ter permissões de superusuário. Para isso, execute:
+
    ``` bash
    sudo su
+   ```
+
+Em seguida, siga os demais passos: 
+
+1. Clonar o repositório
+   
+   ``` bash
    git clone https://github.com/ErickWarmling/BlockchainEleicoes.git
    cd BlockchainEleicoes/
    ```
 
-2. Subir a rede Hyperledger Fabric
+3. Subir a rede Hyperledger Fabric
+   
    ``` bash
    cd backend/
    cd test-network/
@@ -35,7 +44,7 @@ A apresentação pode ser acessada através do seguinte link: [https://youtu.be/
    ./network.sh deployCC -ccn basic -ccp ../chaincode-typescript/ -ccl typescript   
    ```
 
-3. Configuração das variáveis de ambiente
+5. Configuração das variáveis de ambiente
 
    As variáveis de ambiente são referentes à Org1 e Org2. Define elas separadamente e execute sempre dentro da pasta **test-network**.
    
@@ -55,7 +64,7 @@ A apresentação pode ser acessada através do seguinte link: [https://youtu.be/
    export CORE_PEER_ADDRESS=localhost:7051
    ```
 
-4. Invocar a Chaincode
+6. Invocar a Chaincode
 
    Inicialize os partidos do ledger por meio deste comando:
 
@@ -63,7 +72,7 @@ A apresentação pode ser acessada através do seguinte link: [https://youtu.be/
    peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n basic --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"PartyManagementContract:InitPartiesLedger","Args":[]}'
    ```
 
-5. Executar o Back-end (Gateway)
+7. Executar o Back-end (Gateway)
 
    ``` bash
    cd ../vote-chain-gateway/
@@ -83,7 +92,7 @@ A apresentação pode ser acessada através do seguinte link: [https://youtu.be/
    pnpm dev --host
    ```
 
-6. Executar o Front-end
+8. Executar o Front-end
 
    Abra outro terminal, e rode os comandos para executar o front-end:
 
@@ -93,7 +102,7 @@ A apresentação pode ser acessada através do seguinte link: [https://youtu.be/
    pnpm dev --host
    ```
 
-7. Acessar o Banco de Dados PostgreSQL
+9. Acessar o Banco de Dados PostgreSQL
 
    Acesse o banco de dados pelo terminal:
 
