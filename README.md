@@ -21,6 +21,7 @@ A apresentação pode ser acessada através do seguinte link: [https://youtu.be/
 
 1. Clonar o repositório
    ``` bash
+   sudo su
    git clone https://github.com/ErickWarmling/BlockchainEleicoes.git
    cd BlockchainEleicoes/
    ```
@@ -87,7 +88,7 @@ A apresentação pode ser acessada através do seguinte link: [https://youtu.be/
    Abra outro terminal, e rode os comandos para executar o front-end:
 
    ``` bash
-   cd ../../vote-chain/
+   cd BlockchainEleicoes/vote-chain/
    pnpm i
    pnpm dev --host
    ```
